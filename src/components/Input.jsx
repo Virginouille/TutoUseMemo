@@ -7,10 +7,15 @@
  * @returns 
  */
 
-export function Input({ placeholder, value, onChange }) {
+import { useId } from "react"
+
+export function Input({ placeholder, value, onChange, label }) {
+    const id = useId()
     return <div>
+        <label className="form-label" htmlFor="{id}">{label}</label>
         <input type="text"
-            className="form-controle"
+            id={id}
+            className="form-control"
             value={value}
             placeholder={placeholder}
             onChange={(e) => onChange(e.target.value)} />

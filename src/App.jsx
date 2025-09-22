@@ -1,29 +1,10 @@
-import { useState } from 'react'
+import { useId, useMemo, useState } from 'react'
 import { Input } from './components/Input'
 
 function App() {
 
-  const [firstname, setFirstname] = useState('John')
-  const [password, setPassword] = useState('Mot de passe')
-  const security = passwordSecurity(password)
-
-  return <div className='container my-3 vstack gap-2'>
-    <Input
-      label="Nom d'utilisateur"
-      value={firstname}
-      onChange={setFirstname}
-    />
-
-    <div>
-      <Input
-        label="Password"
-        type="password"
-        value={password}
-        onChange={setPassword}
-      />
-    </div>
-
-    Sécurité : {security}
+  return <div>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a malesuada est. Donec pharetra purus quis erat blandit, eu sodales sapien vestibulum. Integer dapibus, nunc at finibus condimentum, orci sem pharetra felis, non feugiat lacus est vitae lectus. In laoreet facilisis erat, sit amet suscipit magna pharetra in. Maecenas velit sem, tempor non lorem non, pulvinar imperdiet nisi. Sed felis enim, gravida aliquam eros id, commodo maximus turpis.
   </div>
 }
 

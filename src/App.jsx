@@ -1,11 +1,20 @@
-import { useId, useMemo, useState } from 'react'
+import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import { Input } from './components/Input'
+
+/**
+ * 
+ * @param {boolean} initial 
+ */
+
+function useToggle(initial = false) {
+  const [state, setState] = useState(initial)
+  const toggle = () => setState(v => !v)
+  return [state, toggle]
+}
 
 function App() {
 
-  return <div>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a malesuada est. Donec pharetra purus quis erat blandit, eu sodales sapien vestibulum. Integer dapibus, nunc at finibus condimentum, orci sem pharetra felis, non feugiat lacus est vitae lectus. In laoreet facilisis erat, sit amet suscipit magna pharetra in. Maecenas velit sem, tempor non lorem non, pulvinar imperdiet nisi. Sed felis enim, gravida aliquam eros id, commodo maximus turpis.
-  </div>
+  return <div>Hook personnalisé</div>
 }
 
 export default App
